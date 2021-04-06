@@ -28,10 +28,12 @@ See https://github.com/LumaTeam/Luma3DS/wiki
 #
 ### Docker quick and easy build
 
-    1. `git clone https://github.com/kleo/Luma3DS`
-    1. `docker build -t kleo/Luma3DS-devkitarm-build .`
-    2. `docker run --rm -v $PWD:/tmp kleo/Luma3DS-devkitarm-build`
-    
+```
+    1. git clone https://github.com/kleo/Luma3DS
+    2. docker build -t kleo/luma3ds-devkitarm-build .
+    3. docker run --rm -v $PWD:/tmp kleo/luma3ds-devkitarm-build
+```
+
 #
 ### Credits
 See https://github.com/LumaTeam/Luma3DS/wiki/Credits
