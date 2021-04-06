@@ -57,7 +57,7 @@ void newPin(bool allowSkipping, u32 pinMode)
     drawString(true, 10, 10, COLOR_TITLE, "Enter a new PIN using ABXY and the DPad");
     drawString(true, 10, 10 + SPACING_Y, COLOR_TITLE, allowSkipping ? "Press START to skip, SELECT to reset" : "Press SELECT to reset");
 
-    drawFormattedString(true, 10, 10 + 3 * SPACING_Y, COLOR_WHITE, "PIN (%u digits): ", length);
+    drawFormattedString(true, 10, 10 + 3 * SPACING_Y, COLOR_WHITE, "", length);
 
     //Pad to AES block length with zeroes
     __attribute__((aligned(4))) u8 enteredPassword[AES_BLOCK_SIZE] = {0};
@@ -148,10 +148,7 @@ bool verifyPin(u32 pinMode)
 
     swapFramebuffers(true);
 
-    drawString(true, 10, 10, COLOR_TITLE, "Enter the PIN using ABXY and the DPad to proceed");
-    drawString(true, 10, 10 + SPACING_Y, COLOR_TITLE, "Press START to shutdown, SELECT to clear");
-
-    drawFormattedString(true, 10, 10 + 3 * SPACING_Y, COLOR_WHITE, "PIN (%u digits): ", lengthBlock[0]);
+    drawFormattedString(true, 10, 10 + 3 * SPACING_Y, COLOR_WHITE, "", lengthBlock[0]);
 
     bool isBottomSplashValid = getFileSize("splashpin.bin") == SCREEN_BOTTOM_FBSIZE;
     if(isBottomSplashValid)
@@ -224,8 +221,6 @@ bool verifyPin(u32 pinMode)
         if(!unlock)
         {
             reset = true;
-
-            drawString(true, 10, 10 + 5 * SPACING_Y, COLOR_RED, "Wrong PIN, try again");
         }
     }
 
