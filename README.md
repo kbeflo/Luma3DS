@@ -26,6 +26,13 @@ Since v8.0, Luma3DS has its own in-game menu, triggerable by <kbd>L+Down+Select<
 See https://github.com/LumaTeam/Luma3DS/wiki
 
 #
+### Docker quick and easy build
+
+    1. `git clone https://github.com/kleo/Luma3DS`
+    1. `docker build -t kleo/Luma3DS-devkitarm-build .`
+    2. `docker run --rm -v $PWD:/tmp kleo/Luma3DS-devkitarm-build`
+    
+#
 ### Credits
 See https://github.com/LumaTeam/Luma3DS/wiki/Credits
 
