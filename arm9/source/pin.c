@@ -182,7 +182,7 @@ bool verifyPin(u32 pinMode)
         if(reset)
         {
             for(u32 i = 0; i < cnt; i++)
-                drawCharacter(true, 10 + (16 + 2 * i) * SPACING_X, 10 + 3 * SPACING_Y, COLOR_BLACK, '*');
+                drawCharacter(true, 10 + (16 + 2 * i) * SPACING_X, 75 + 3 * SPACING_Y, COLOR_BLACK, '*');
 
             cnt = 0;
             reset = false;
@@ -211,7 +211,7 @@ bool verifyPin(u32 pinMode)
         enteredPassword[cnt] = (u8)pinKeyToLetter(pressed);
 
         //Visualize character on screen
-        drawCharacter(true, 10 + (16 + 2 * cnt) * SPACING_X, 10 + 3 * SPACING_Y, COLOR_WHITE, '*');
+        drawCharacter(true, 10 + (16 + 2 * cnt) * SPACING_X, 75 + 3 * SPACING_Y, COLOR_WHITE, '*');
 
         if(++cnt < lengthBlock[0]) continue;
 
